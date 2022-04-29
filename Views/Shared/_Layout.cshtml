@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WeddingInvites</title>
+    <link rel="stylesheet" href="~/css/tailwind.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WeddingInvites.styles.css" asp-append-version="true" />
+</head>
+<body>
+
+    <header>
+        <div class="container mx-auto max-w-4xl py-5 flex justify-around items-center">
+            <h1 class="font-sans font-bold text-4xl">
+                <a asp-action="Index">
+                    [<span class="text-red-600">S</span>&<span class="text-blue-600">A</span>]
+                </a>
+            </h1>
+            <a asp-action="ListOfAttendies" class="font-serif text-xl underline">List of Guests</a>
+        </div>
+    </header>
+
+    <div class="container mx-auto max-w-4xl py-20 px-10">
+        @RenderBody()
+    </div>
+
+    
+    <footer class="">
+        <div class="container mx-auto max-w-3xl py-20 text-gray-700">
+            <hr>
+            &copy; 2022 - WeddingInvites - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

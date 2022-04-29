@@ -1,0 +1,10 @@
+@model RSVPinvites.Models.RSVPinvite;
+
+@{
+    ViewData["Title"] = "Enough Guest list";
+}
+
+<div class="container max-w-3xl mx-auto flex flex-col items-center">
+    <h1 class="font-sans text-2xl">Sorry <span class="font-bold underline">@Model.Name</span></h1>
+    <h1 class="font-sans text-2xl">The Guest list is full, try again later</h1>
+</div>

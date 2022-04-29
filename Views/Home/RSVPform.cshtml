@@ -1,0 +1,53 @@
+@model RSVPinvites.Models.RSVPinvite;
+
+@{
+    ViewData["Title"] = "Filling a Form";
+}
+
+
+<div class="container max-w-xl mx-auto">
+    <h1 class="text-center py-6 font-sans text-xl">
+        Please fill the form below
+    </h1>
+    <form asp-action="RSVPform" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-red-600"></div>
+        <div class="py-2 flex flex-col">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" type="text" class="py-2 px-3 w-full border-2 border-black">
+            <span asp-validation-for="Name" class="text-red-600"></span>
+        </div>
+        <div class="py-2 flex flex-col">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" type="text" class="py-2 px-3 w-full border-2 border-black">
+            <span asp-validation-for="Name" class="text-red-600"></span>
+        </div>
+        <div class="py-2 flex flex-col">
+            <label asp-for="City"></label>
+            <input asp-for="City" type="text" class="py-2 px-3 w-full border-2 border-black">
+            <span asp-validation-for="City" class="text-red-600"></span>
+        </div>
+        <div class="py-2 grid grid-cols-2 mb-5">
+            <div class="">
+                <label asp-for="Donations"></label>
+                <input asp-for="Donations" type="number" class="py-2 px-3 w-full border-2 border-black">
+                <span asp-validation-for="Donations" class="text-red-600"></span>
+            </div>
+            <div class="">
+                <label>Are you coming?</label>
+                <select  asp-for="AreYouAttending" class="py-2 px-3 w-full border-2 border-black">
+                    <option value="">Choose an option value</option>
+                    <option value="true">Yes i'll be there</option>
+                    <option value="false">No, im sorry</option>
+                    <span asp-validation-for="AreYouAttending" class="text-red-600"></span>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="py-2 w-full bg-blue-600 text-white text-2xl">Submit your response</button>
+    </form>
+</div>
+
+@section Scripts{
+    @{ <partial name="_ValidationScriptsPartial" /> }
+}
+
+
