@@ -24,6 +24,7 @@ namespace RSVPinvites.Models
         public bool? AreYouAttending { get;set; }
         [Required]
         [Display(Name = "Your-donation-Amout")]
+        [DataType(DataType.Currency)]
         public string Donations{ get;set; }
     }
 }

@@ -5,7 +5,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace WeddingInvites.Migrations
 {
-    public partial class basess : Migration
+    public partial class changing : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

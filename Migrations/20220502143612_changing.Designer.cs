@@ -12,8 +12,8 @@ using RSVPinvites.Data;
 namespace WeddingInvites.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220429082839_basess")]
-    partial class basess
+    [Migration("20220502143612_changing")]
+    partial class changing
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

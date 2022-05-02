@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace RSVPinvites.Controllers
 {
-    public class HomeController: Controller
+    public class  HomeController: Controller
     {
         private readonly IWeddingInvites _weddingInvitesInterface;
 
@@ -21,7 +21,7 @@ namespace RSVPinvites.Controllers
 
         //Main Index action method
         [HttpGet]
-        public IActionResult Index()
+        public   IActionResult Index()
         {
             IEnumerable<RSVPinvite> GettingListOfGuest = _weddingInvitesInterface.GetAListOfAllGuest();
             int DonationsSum = 0;

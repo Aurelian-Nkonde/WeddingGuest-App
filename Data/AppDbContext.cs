@@ -12,6 +12,6 @@ namespace RSVPinvites.Data
             
         }
 
-        public DbSet<RSVPinvite> RSVPinvites { get;set; }
+        public DbSet<RSVPinvite>? RSVPinvites { get;set; }
     }
 }
