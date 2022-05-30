@@ -9,5 +9,6 @@ namespace RSVPinvites.Interfaces
     {
         IEnumerable<RSVPinvite> GetAListOfAllGuest();
         void RSVPform(RSVPinvite dataInput);
+        void ResetGuestsList();
     }
 }

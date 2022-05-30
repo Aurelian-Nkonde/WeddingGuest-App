@@ -10,12 +10,14 @@ namespace RSVPinvites.Controllers
 {
     public class  HomeController: Controller
     {
+        private readonly AppDbContext _databaseContext;
         private readonly IWeddingInvites _weddingInvitesInterface;
 
         // constructor dependency injection happening here
-        public HomeController(IWeddingInvites weddingInvitesInterface)
+        public HomeController(IWeddingInvites weddingInvitesInterface, AppDbContext databaseContext)
         {
             _weddingInvitesInterface = weddingInvitesInterface;
+            _databaseContext = databaseContext;
         }
 
 
@@ -70,6 +72,13 @@ namespace RSVPinvites.Controllers
             IEnumerable<RSVPinvite> data =  _weddingInvitesInterface.GetAListOfAllGuest();
             return View(data);
             
+        }
+
+
+        public IActionResult ResetList()
+        {
+            _weddingInvitesInterface.ResetGuestsList();
+            return RedirectToAction("ListOfAttendies");
         }
 
 

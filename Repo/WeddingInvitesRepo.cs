@@ -28,5 +28,17 @@ namespace RSVPinvites.Interfaces
             _databaseContext.RSVPinvites.Add(dataInput);
             _databaseContext.SaveChanges();
         }
+
+
+        public void ResetGuestsList()
+        {
+            var data = _databaseContext.RSVPinvites.ToList();
+            foreach(var item in data)
+            {
+                _databaseContext.RSVPinvites.Remove(item);
+                _databaseContext.SaveChanges();
+            }
+            
+        }
     }
 }
